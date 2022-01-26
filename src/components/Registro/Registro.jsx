@@ -34,7 +34,7 @@ const Registro = () => {
           </div>
         </div>
       ) : (
-        <div className="align-items-center border  cuerpologin">
+        <div className="align-items-center   cuerpologin">
           <h1 className="text-center border-bottom m-4 p-4">Register</h1>
           <form className="container align-items-center larger shadow formingreso mb-5 mt-3 p-3">
             <div className="mb-3 ">
@@ -66,7 +66,7 @@ const Registro = () => {
               onClick={(e) => agregarUsuario(e)}
               className="btn btn-secondary boton"
             >
-              Ingresar
+              Registrarse
             </button>
             <div>
               <Link className="mb-1" to={"/login"}>

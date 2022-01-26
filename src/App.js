@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Registro from "./components/Registro";
 import Perfil from "./components/Perfil/Perfil";
 import TecnoProvider from "./Store/appContext";
+import ProductoIndividual from "./components/ProductoIndividual";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Registro/>} />
+            <Route path='/detalle/:id' element={<ProductoIndividual/>}/>
             <Route path='/perfil' element={<Perfil/>}/>
             <Route path="/carrito" element={<Carrito />} />
           </Routes>

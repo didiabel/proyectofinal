@@ -1,0 +1,15 @@
+.footer{
+    background-color: #082032;
+    color: #FF4C29;
+  }
+.redes{
+  text-align: center;
+  background-color: #082032;
+  border-radius: 8px;
+  color: #FF4C29!important;
+}
+.redes a {
+  color: #FF4C29;
+  margin: 5%;
+  font-size: 150%;
+}

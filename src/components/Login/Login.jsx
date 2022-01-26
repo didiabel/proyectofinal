@@ -31,8 +31,8 @@ const Login = () => {
   };
   console.log(userLoged);
   return (
-    <div className="align-items-center border  cuerpologin">
-      <h1 className="text-center border-bottom m-4 p-4">Register</h1>
+    <div className="align-items-center cuerpologin">
+      <h1 className="text-center border-bottom m-4 p-4">Login</h1>
       <form className="container align-items-center larger shadow formingreso mb-5 mt-3 p-3">
         <div className="mb-3 ">
           <label htmlFor="exampleInputEmail1" className="form-label mt-2">
