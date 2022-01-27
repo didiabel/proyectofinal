@@ -17,7 +17,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div className="container-fluid aplicacion">
+    <div className="aplicacion">
       <Toaster/>
       <TecnoProvider>
         <Router>
@@ -33,7 +33,7 @@ function App() {
             <Route path='/proyectofinal/notebooks' element={<Notebooks/>}/>
             <Route path='/proyectofinal/celulares' element={<Celulares/>}/>
             <Route path='/proyectofinal/tablets' element={<Tablets/>}/>
-            <Route path='/admin/dashboard' element={<Dashboard/>}/>
+            <Route path='/proyectofinal/admin/dashboard' element={<Dashboard/>}/>
           </Routes>
             </div>
           <Footer />

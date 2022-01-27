@@ -11,7 +11,7 @@ const Login = () => {
     userName,
     setUserName,
     userPassword,
-    setPassword,
+    setUserPassword,
   } = useContext(TecnoContext);
   const [error, setError] = useState(false);
 
@@ -54,7 +54,7 @@ const Login = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setUserPassword(e.target.value)}
           />
         </div>
         <div className="d-flex justify-content-around">

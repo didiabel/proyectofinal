@@ -9,7 +9,7 @@ const TecnoProvider = ({ children }) => {
 
   // valores de los inputs de login y registrarse
   const [userName, setUserName] = useState("");
-  const [userPassword, setPassword] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
   //base de datos
   const [productos, setProductos] = useState([
@@ -34,7 +34,7 @@ const TecnoProvider = ({ children }) => {
       tipo: "Laptop",
       nombre: "Thinkpad 5",
       precio: 150000,
-      descripcion: "Muy buena compu",
+      descripcion: "Las características de cada producto pueden variar según el país de adquisición del mismo, por lo que la siguiente descripción no debe ser interpretada como un compromiso contractual. Te invitamos a revisar las características específicas para cada producto antes de realizar la compra online en la sección 'Ver Modelos' de esta misma página, o con un asesor de ventas si es en una tienda física.",
     },
     {
       id: 4,
@@ -89,7 +89,7 @@ const TecnoProvider = ({ children }) => {
       tipo: "Celular",
       nombre: "Samsung Galaxy S10 Plus",
       precio: 50000,
-      descripcion: "Un muy buen celular",
+      descripcion: "El Samsung Galaxy S10+ es el más poderoso de la serie Galaxy S10. Con una pantalla AMOLED QHD+ de 6.4 pulgadas, el Galaxy S10+ está potenciado por el procesador Exynos 9820 octa-core, con opciones de 6GB y 128GB de almacenamiento. La cámara triple del Galaxy S10+ tiene la misma configuración de 12 MP + 12 MP + 16 MP de su hermano menor el S10, incluyendo zoom, OIS, lente wide y PDAF dual pero su cámara para selfies es dual, de 10 MP + 8 MP. Con una batería de 4100 mAh con carga rápida inalámbrica que puede a su vez cargar otros dispositivos, el Galaxy S10+ tiene lector de huellas bajo pantalla, puerto USB-C, parlantes stereo, sonido Dolby, optimizaciones AKG y corre One UI basado en Android 9.0 Pie. El Galaxy S10+ también debuta con su versión cerámica en blanco o negro.",
     },
     {
       id: 11,
@@ -154,13 +154,17 @@ const TecnoProvider = ({ children }) => {
     if (error) return toast.error('Este producto ya esta en tus Deseados')
     setWishlist([product, ...wishlist])
     setPrecioTotal(precioTotal+precionuevo)
-    toast.success('Agregado a Deseados')
+    toast.success('Agregado al carrito')
 }
 //funcion para eliminar del carrito
 const deleteCarrito = (id,precionuevo) =>{
 setWishlist(wishlist.filter(wish=>wish.id != id))
 setPrecioTotal(precioTotal-precionuevo)
 toast.error('Eliminado del carrito')
+}
+//delete producto para el admin
+const deleteAdmin = (id) =>{
+  setProductos(productos.filter(producto=>producto.id != id))
 }
 
 //para el filtro del navegador
@@ -173,11 +177,37 @@ toast.error('Eliminado del carrito')
   //si no hay productos en el wishlist
   const [noHayProductos, setNoHayProductos]=useState(false)
 
-  const comprar = (compra) =>{
+  const comprar = (compra, navigate) =>{
     setCompras([...compras, compra])
       setWishlist([])
       setPrecioTotal(0)
+      toast.success("Compra Realizada")
+      navigate('/proyectofinal/perfil/')
   }
+  //values de inputs para agregar producto
+  const [newid, setNewid] = useState("")
+    const [newnombre, setNewnombre] = useState("")
+    const [newtipo, setNewtipo] = useState("")
+    const [newprecio, setNewprecio] = useState("")
+    const [newdescripcion , setNewdescripcion] = useState("")
+  //funcion agregar productos admin
+  const agregarProductosAdmin = (e) =>{
+    e.preventDefault();
+    setProductos([{id:newid, nombre: newnombre,tipo:newtipo, precio: newprecio,descripcion: newdescripcion},...productos])
+    setNewid("")
+    setNewnombre("")
+    setNewtipo("")
+    setNewprecio("")
+    setNewdescripcion("")
+    toast.success('Producto Agregado con éxito')
+}
+
+//funcion para eliminar usuarios admin
+
+const deleteUser = id =>{
+    setUsers(users.filter(user=> user.name !=id))
+    toast.success('Usuario eliminado con éxito')
+}
   return (
     <TecnoContext.Provider
       value={{
@@ -192,13 +222,14 @@ toast.error('Eliminado del carrito')
         userName,
         setUserName,
         userPassword,
-        setPassword,
+        setUserPassword,
         search, 
         setSearch,
         addProduct,
         deleteCarrito,
         comprar,compras,setCompras,precioTotal, setPrecioTotal,
-        noHayProductos,setNoHayProductos
+        noHayProductos,setNoHayProductos, deleteAdmin,
+        agregarProductosAdmin, deleteUser,newid, setNewid,newnombre, setNewnombre,newtipo, setNewtipo,newprecio, setNewprecio,newdescripcion , setNewdescripcion
       }}
     >
       {children}

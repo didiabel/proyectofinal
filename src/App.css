@@ -12,6 +12,10 @@
 .text{
     color: #FF4C29;
 }
+.iconoCards{
+    color: #FF4C29;
+    font-size: 110%;
+}
 .logitudDeLaPag{
     min-height: 80vh;
     display: flex;
@@ -39,9 +43,23 @@ background-color: #082032;
     padding-left: 10px;
     font-size: 200%;
     color: #FF4C29;
-    
 }
 .lupita{
     color: #FF4C29;
     font-size: 150%;
 }
+@media only screen and (min-width: 600px){
+    .imagenesProductoIndividual{
+
+        height: 400px!important;
+        width: 600px!important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .imagenesProductoIndividual{
+
+        height: 200px!important;
+        width: 300px!important;
+    }
+}
+

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { TecnoContext } from "../../Store/appContext";
 
 const Registro = () => {
@@ -19,22 +19,34 @@ const Registro = () => {
     name: userName,
     password: userPassword,
   };
+  //para el error de que los datos estan vacios
   const[inputs, setInputs] = useState(false)
+  //para error que el user ya existe
   const [yaExiste,setYaExiste]=useState(false)
+  //para aprobacion de registro
+  const [registroAprobado,setRegistroAprobado]=useState(false)
+
+  //para el error de que los datos estan vacios
   const completaLosInputs = (e) => {
     e.preventDefault();
     setInputs(true)
+    setRegistroAprobado(false)
   };
-
+let navigate= useNavigate()
   const agregarUsuario = (e) => {
     e.preventDefault();
     setInputs(false)
     const existe = users.find(ele => ele.name== userName)
+
     if (existe) {
-      return(setYaExiste(true))
+      return(setYaExiste(true), setRegistroAprobado(false))
     }else{
         setUsers([...users, newUser])
         setYaExiste(false)
+        setRegistroAprobado(true)
+        toast.success(`Usuario Registrado: ${userName} `)
+        navigate('/proyectofinal/login')
+
       }
     
   };
@@ -97,6 +109,9 @@ const Registro = () => {
                 </div>
                 <div className={yaExiste? "d-flex justify-content-around mt-1" :"d-none"}>
                 <h6>Usuario no disponible</h6>
+                </div>
+                <div className={registroAprobado? "d-flex justify-content-around mt-1" :"d-none"}>
+                <h6 className="text-success">Usuario registrado</h6>
                 </div>
                 <div className="d-flex justify-content-around">
                   

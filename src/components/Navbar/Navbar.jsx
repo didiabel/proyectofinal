@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import "./Navbar.css";
 import { TecnoContext } from "../../Store/appContext";
@@ -15,9 +15,10 @@ const Navbar = () => {
     setWishlist,
   } = useContext(TecnoContext);
 
-  const preventDefault=(e)=>{
-    e.preventDefault()
-  }
+  const preventDefault = (e) => {
+    e.preventDefault();
+  };
+  let location = useLocation();
 
   return (
     <>
@@ -39,37 +40,59 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around letra">
-              <Link style={{textDecoration: "none"}} to={"/proyectofinal/notebooks"}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/proyectofinal/notebooks"}
+              >
                 <li className="nav-item">
                   <p className="nav-link">Notebooks</p>
                 </li>
               </Link>
-              <Link style={{textDecoration: "none"}} to={'/proyectofinal/celulares'}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/proyectofinal/celulares"}
+              >
                 <li className="nav-item dropdown">
-                  <p
-                    className="nav-link">
-                    Celulares
-                  </p>
+                  <p className="nav-link">Celulares</p>
                 </li>
               </Link>
-              <Link style={{textDecoration: "none"}} to={"/proyectofinal/tablets"}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/proyectofinal/tablets"}
+              >
                 <li className="nav-item">
                   <p className="nav-link">Tablets</p>
                 </li>
               </Link>
             </ul>
             <form className=" m-2">
-              <div className="d-flex ">
-                <input
-                  className="form-control "
-                  type="search"
-                  placeholder="Busquedas"
-                  aria-label="Search"
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-                <button className="btn " onClick={(e)=>preventDefault(e)} type="submit">
-                  <i className="bi bi-search  lupita"></i>
-                </button>
+              <div className="d-flex">
+                <div
+                  className={
+                    location.pathname === "/proyectofinal" ||
+                    location.pathname === "/proyectofinal/" ||
+                    location.pathname === "/proyectofinal/notebooks" ||
+                    location.pathname === "/proyectofinal/celulares" ||
+                    location.pathname === "/proyectofinal/tablets"
+                      ? "d-flex"
+                      : "d-none"
+                  }
+                >
+                  <input
+                    className="form-control "
+                    type="search"
+                    placeholder="Busquedas"
+                    aria-label="Search"
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <button
+                    className="btn "
+                    onClick={(e) => preventDefault(e)}
+                    type="submit"
+                  >
+                    <i className="bi bi-search  lupita"></i>
+                  </button>
+                </div>
                 <h5 className="text ml-4">{wishlist.length}</h5>
                 <Link to={"/proyectofinal/carrito"}>
                   <i className="bi- bi-cart cart-icon carritos"></i>

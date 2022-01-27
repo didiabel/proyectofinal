@@ -1,59 +1,89 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Cart } from "react-bootstrap-icons";
-
-import { useEffect, useState } from 'react/cjs/react.development';
-import { TecnoContext } from '../../Store/appContext';
-import CardsProductos from '../CardsProductos';
-import './Carrito.css'
-
+import { TecnoContext } from "../../Store/appContext";
+import CardsProductos from "../CardsProductos";
+import "./Carrito.css";
+import MyButton from "../botonEmail/botonEmail";
+import sendEmail from "../email/Email";
 
 const Carrito = () => {
-    const {wishlist, setWishlist, comprar,precioTotal, setPrecioTotal,userLoged,noHayProductos,setNoHayProductos} = useContext(TecnoContext)
-    
+  const { wishlist, comprar, precioTotal, userLoged } =
+    useContext(TecnoContext);
 
-
-    return (
-        <>
-        {!userLoged?
+  let navigate = useNavigate();
+  return (
+    <>
+      {!userLoged ? (
         <div className="d-flex justify-content-around m-5">
-        <div>
-          <h1 className="text">No Estas Logueado</h1>
-          <Link
-            className="d-flex justify-content-around"
-            to={"/proyectofinal/login"}
-          >
-            <button className="btn btn-secondary m-5">Logueate</button>
-          </Link>
+          <div>
+            <h1 className="text">No Estas Logueado</h1>
+            <Link
+              className="d-flex justify-content-around"
+              to={"/proyectofinal/login"}
+            >
+              <button className="btn btn-secondary m-5">Logueate</button>
+            </Link>
+          </div>
         </div>
-      </div>
-        :
+      ) : (
         <main>
-            <div className='container-fluid  carrito'>
-                <div className='row d-flex flex-wrap justify-content-around'>  
-                <div className=' d-flex flex-wrap justify-content-around'>
-                    <div >
-                <h1 className={wishlist.length > 0 ? 'text' : 'd-none'}>Total: ${precioTotal}</h1> 
-                 <div className=' d-flex flex-wrap justify-content-around'>
-                <button onClick={()=> comprar(wishlist)} className={wishlist.length > 0 ? 'btn  botonCards btn-outline-success' : 'd-none'}> <Cart  className="text"/> Comprar</button>
-                 </div>
+          <div className="container-fluid  carrito">
+            <div className="row d-flex flex-wrap justify-content-around">
+              <div className=" d-flex flex-wrap justify-content-around">
+                <div>
+                  <h1 className={wishlist.length > 0 ? "text" : "d-none"}>
+                    Total: ${precioTotal}
+                  </h1>
+                  <div className=" d-flex flex-wrap justify-content-around">
+                    <MyButton
+                      onClick={() =>
+                        sendEmail(
+                          "Stephanie",
+                          "stephanie@designcode.io",
+                          "Hello from my React application!"
+                        )
+                      }
+                    />
+                    ;
+                    <button
+                      onClick={() => comprar(wishlist, navigate, precioTotal)}
+                      className={
+                        wishlist.length > 0
+                          ? "btn  botonCards btn-outline-success"
+                          : "d-none"
+                      }
+                    >
+                      {" "}
+                      <Cart className="text" /> Comprar
+                    </button>
+                  </div>
                 </div>
+              </div>
+              {wishlist.length === 0 ? (
+                <div className="d-flex justify-content-around ">
+                  <div className="d-flex flex-wrap">
+                    <h2 className="carrovacio">
+                      No hay productos en tu carrito
+                    </h2>
+                    <i className="bi- bi-cart cart-icon carritos  carrovacio"></i>
+                  </div>
                 </div>
-                {wishlist.length === 0 ? <h2 className='text-center mt-5 mb-5 carrovacio'>No hay productos</h2>
-                :
+              ) : (
                 <>
-                {wishlist.map((wish) => (
-                        <CardsProductos key={wish.id} producto={{...wish}}  ></CardsProductos>
-                ))}
+                  {wishlist.map((wish) => (
+                    <CardsProductos
+                      key={wish.id}
+                      producto={{ ...wish }}
+                    ></CardsProductos>
+                  ))}
                 </>
-}
-                </div>
+              )}
             </div>
+          </div>
         </main>
-         }
-        
-        
-        </>
-     );
-}
+      )}
+    </>
+  );
+};
 export default Carrito;

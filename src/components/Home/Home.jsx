@@ -6,14 +6,14 @@ import CardsProductos from "../CardsProductos/CardsProductos";
 import "./Home.css";
 
 const Home = () => {
-  const { productos, setProductos, userLoged, search, setSearch } = useContext(TecnoContext);
+  const { productos, search } = useContext(TecnoContext);
 
   return (
     <div className="conatiner">
       <Toaster/>
         <div>
           <h2 className="text-center text m-3">Bienvenido a TecnoGreen</h2>
-          <div className="d-flex flex-wrap justify-content-between">
+          <div className="d-flex flex-wrap justify-content-around">
             {productos.filter(val=>{
                 if(search==''){
                     return productos
