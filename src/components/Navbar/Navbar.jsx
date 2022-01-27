@@ -39,7 +39,7 @@ const Navbar = () => {
             <i className="bi bi-list navbar-toggler-icon text"></i>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around letra">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around mt-3 letra">
               <Link
                 style={{ textDecoration: "none" }}
                 to={"/proyectofinal/notebooks"}

@@ -24,7 +24,7 @@ const ProductoIndivual = () => {
     'cargando'
     :
       <div  className="card ">
-        <h5 className="card-header d-flex justify-content-center texto">{detalle[0].nombre}</h5>
+        <h1 className="card-header d-flex justify-content-center texto">{detalle[0].nombre}</h1>
         <div className="d-flex justify-content-center">
             <img
           src={require(`../../img/${detalle[0].nombre}.jpg`)}
@@ -37,7 +37,7 @@ const ProductoIndivual = () => {
         <div className="d-flex justify-content-around mt-4">
         {location.pathname === '/proyectofinal/' || location.pathname === '/proyectofinal/notebooks' || location.pathname === '/proyectofinal/celulares' || location.pathname === '/proyectofinal/tablets' || location.pathname === `/proyectofinal/detalle/${nro}` ?
            <button onClick={() => addProduct({...detalle[0]}, detalle[0].precio)}
-           className= 'btn btn-outline-success'>
+           className= 'btn '>
              <p className="iconoCards mt-3">Agregar al Carrito <Cart  /></p>
             </button>
             :
@@ -47,7 +47,7 @@ const ProductoIndivual = () => {
           {detalle[0].descripcion}
           </p>
           <Link to={'/proyectofinal/'}><p className="btn btn-secondary d-flex justify-content-center texto">
-            <Arrow90degLeft/> Volver
+            <Arrow90degLeft/>  Volver
           </p></Link>
           
         </div>

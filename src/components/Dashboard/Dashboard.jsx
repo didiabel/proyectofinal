@@ -10,8 +10,6 @@ import toast, { Toaster } from "react-hot-toast";
 const Dashboard = () => {
   const {
     productos,
-    setProductos,
-    setUsers,
     users,
     userLoged,
     agregarProductosAdmin,
@@ -30,6 +28,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      {/* preguntamos si el usuario esta logueado */}
       {userLoged === false ? (
         <div className="d-flex justify-content-around m-5">
           <div>
@@ -44,6 +43,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <>
+        {/*  si esta logueado aparece  la pagina */}
           <Toaster />
           <nav
             className="navbar navbar-expand-md navbar-light bg-secondary"

@@ -27,6 +27,7 @@ const CardsProductos = (props) => {
             <Link to={"/proyectofinal/detalle/" + producto.id}>
               <button className="btn botonCards"><p>Ver Detalle</p></button>
             </Link>
+            {/* hacemos validaciones para mostrar los iconos, o carritos o basurita */}
              {location.pathname === '/proyectofinal/' || location.pathname === '/proyectofinal/notebooks' || location.pathname === '/proyectofinal/celulares' || location.pathname === '/proyectofinal/tablets' ?
            <button onClick={() => addProduct({...producto}, producto.precio)}
            className= "btn"><Cart className="text iconoCards" />

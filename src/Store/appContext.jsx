@@ -153,13 +153,13 @@ const TecnoProvider = ({ children }) => {
     const error = wishlist.find(wish =>wish.id === product.id)
     if (error) return toast.error('Este producto ya esta en tus Deseados')
     setWishlist([product, ...wishlist])
-    setPrecioTotal(precioTotal+precionuevo)
+    setPrecioTotal(parseInt(precioTotal) + parseInt(precionuevo) )
     toast.success('Agregado al carrito')
 }
 //funcion para eliminar del carrito
 const deleteCarrito = (id,precionuevo) =>{
 setWishlist(wishlist.filter(wish=>wish.id != id))
-setPrecioTotal(precioTotal-precionuevo)
+setPrecioTotal(parseInt(precioTotal) - parseInt(precionuevo))
 toast.error('Eliminado del carrito')
 }
 //delete producto para el admin
@@ -182,7 +182,6 @@ const deleteAdmin = (id) =>{
       setWishlist([])
       setPrecioTotal(0)
       toast.success("Compra Realizada")
-      navigate('/proyectofinal/perfil/')
   }
   //values de inputs para agregar producto
   const [newid, setNewid] = useState("")

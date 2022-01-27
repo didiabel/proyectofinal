@@ -69,7 +69,7 @@ const Perfil = () => {
                 id="compras"
               >
                 {compras.map((comp) => (
-                  <div key={comp.id} className="carta m-3"style={{ width: "16rem" }}>
+                  <div key={comp.id} className="carta p-2"style={{ width: "16rem" }}>
                     <h4 className="m-1"> Detalle de Compra: </h4>
                     {comp.map((compra) => (
                       <div

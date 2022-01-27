@@ -14,8 +14,13 @@ import Notebooks from "./components/tabs/Notebooks";
 import Celulares from "./components/tabs/Celulares";
 import Tablets from "./components/tabs/Tablets/Tablet";
 import Dashboard from "./components/Dashboard";
+import { useEffect } from "react";
 
 function App() {
+  //cambiamos el titulo del tab
+  useEffect(() => {
+    document.title = "Tecno Green"
+  }, [])
   return (
     <div className="aplicacion">
       <Toaster/>
