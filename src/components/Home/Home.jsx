@@ -1,33 +1,30 @@
 import { useContext, useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { TecnoContext } from "../../Store/appContext";
 import CardsProductos from "../CardsProductos/CardsProductos";
 import "./Home.css";
 
 const Home = () => {
-  const { productos, setProductos, userLoged } = useContext(TecnoContext);
+  const { productos, setProductos, userLoged, search, setSearch } = useContext(TecnoContext);
 
   return (
     <div className="conatiner">
-      {userLoged === false ? (
-        <div className="d-flex justify-content-around m-5">
-          <div>
-            <h1>No Estas Logueado</h1>
-            <Link className="d-flex justify-content-around" to={"/login"}>
-              <button className="btn btn-secondary m-5">Logueate</button>
-            </Link>
-          </div>
-        </div>
-      ) : (
+      <Toaster/>
         <div>
-          <h2 className="text-center">Bienvenido a nuestra pagina</h2>
+          <h2 className="text-center text m-3">Bienvenido a TecnoGreen</h2>
           <div className="d-flex flex-wrap justify-content-between">
-            {productos.map((producto) => (
+            {productos.filter(val=>{
+                if(search==''){
+                    return productos
+                }else if (val.nombre.toLowerCase().includes(search.toLowerCase())) {
+                    return val
+                }
+            }).map((producto) => (
               <CardsProductos key={producto.id} producto={{ ...producto }} />
             ))}
           </div>
         </div>
-      )}
     </div>
   );
 };

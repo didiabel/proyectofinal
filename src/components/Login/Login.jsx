@@ -15,7 +15,6 @@ const Login = () => {
   } = useContext(TecnoContext);
   const [error, setError] = useState(false);
 
-  console.log(userName);
   let navigate = useNavigate();
 
   const validacion = (e) => {
@@ -23,16 +22,15 @@ const Login = () => {
     for (let i = 0; i < users.length; i++) {
       if (userName == users[i].name && userPassword == users[i].password) {
         setUserLoged(`User: ${users[i].name}`);
-        navigate("/"); //ReactRuterdom useNavigate
+        navigate("/proyectofinal/"); //ReactRuterdom useNavigate
       } else {
         setError(true);
       }
     }
   };
-  console.log(userLoged);
   return (
     <div className="align-items-center cuerpologin">
-      <h1 className="text-center border-bottom m-4 p-4">Login</h1>
+      <h1 className="text-center m-4 p-4">Login</h1>
       <form className="container align-items-center larger shadow formingreso mb-5 mt-3 p-3">
         <div className="mb-3 ">
           <label htmlFor="exampleInputEmail1" className="form-label mt-2">
@@ -59,18 +57,20 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <div className="d-flex justify-content-around">
         <button
           onClick={(e) => validacion(e)}
           className="btn btn-secondary boton"
         >
           Ingresar
         </button>
+        </div>
         <h6 className={error ? "text-danger" : "d-none"}>
           Credenciales incorrectas
         </h6>
         <div className="d-flex">
           <p className="m-1">No tenes usuario? </p>
-          <Link className="m-1" to={"/register"}>
+          <Link className="m-1" to={"/proyectofinal/register"}>
             <p> Registrarse</p>
           </Link>
         </div>

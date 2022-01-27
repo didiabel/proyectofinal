@@ -1,12 +1,12 @@
-import { Toast } from "bootstrap";
 import { createContext, useEffect, useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 export const TecnoContext = createContext(null);
 
 const TecnoProvider = ({ children }) => {
   //useState de usuario logueado
   const [userLoged, setUserLoged] = useState(false);
-  
+
   // valores de los inputs de login y registrarse
   const [userName, setUserName] = useState("");
   const [userPassword, setPassword] = useState("");
@@ -143,20 +143,41 @@ const TecnoProvider = ({ children }) => {
     password: "pdtc",
   },]);
 
-  const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState(JSON.parse(localStorage.getItem('wishlist')) !== null ? JSON.parse(localStorage.getItem('wishlist')):[])
 
-  useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }, [wishlist]);
 
+    //para total de la compra
+    const [precioTotal, setPrecioTotal]=useState(0)
   //funcion para agregar producto
-  const addProduct = (product) => {
-    const error = wishlist.find((wish) => wish.id === product.id);
-    if (error) return Toast.error("Este producto ya esta en tus Deseados");
-    setWishlist([product, ...wishlist]);
-    Toast.sucess("Agregado a Deseados");
-  };
+  const addProduct = (product, precionuevo) =>{
+    const error = wishlist.find(wish =>wish.id === product.id)
+    if (error) return toast.error('Este producto ya esta en tus Deseados')
+    setWishlist([product, ...wishlist])
+    setPrecioTotal(precioTotal+precionuevo)
+    toast.success('Agregado a Deseados')
+}
+//funcion para eliminar del carrito
+const deleteCarrito = (id,precionuevo) =>{
+setWishlist(wishlist.filter(wish=>wish.id != id))
+setPrecioTotal(precioTotal-precionuevo)
+toast.error('Eliminado del carrito')
+}
 
+//para el filtro del navegador
+  const [search, setSearch] = useState("")
+
+  //para comprar
+  const[compras,setCompras]=useState([])
+
+
+  //si no hay productos en el wishlist
+  const [noHayProductos, setNoHayProductos]=useState(false)
+
+  const comprar = (compra) =>{
+    setCompras([...compras, compra])
+      setWishlist([])
+      setPrecioTotal(0)
+  }
   return (
     <TecnoContext.Provider
       value={{
@@ -172,6 +193,12 @@ const TecnoProvider = ({ children }) => {
         setUserName,
         userPassword,
         setPassword,
+        search, 
+        setSearch,
+        addProduct,
+        deleteCarrito,
+        comprar,compras,setCompras,precioTotal, setPrecioTotal,
+        noHayProductos,setNoHayProductos
       }}
     >
       {children}
