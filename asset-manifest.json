@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proyectofinal/static/css/main.247ade8b.css",
-    "main.js": "/proyectofinal/static/js/main.901ab220.js",
+    "main.css": "/proyectofinal/static/css/main.b23da4ee.css",
+    "main.js": "/proyectofinal/static/js/main.3a73e46c.js",
     "static/js/787.6dbdcbe9.chunk.js": "/proyectofinal/static/js/787.6dbdcbe9.chunk.js",
     "static/media/Huawei MateBook 13.jpg": "/proyectofinal/static/media/Huawei MateBook 13.b086acb46c3365388269.jpg",
     "static/media/Amazon Fire HD 8 (2020).jpg": "/proyectofinal/static/media/Amazon Fire HD 8 (2020).3b42e74ffc78e4b0219d.jpg",
@@ -27,12 +27,12 @@
     "static/media/Samsung Tab S6 Lite.jpg": "/proyectofinal/static/media/Samsung Tab S6 Lite.aaf5bd7f7da784dec8bc.jpg",
     "static/media/Dell XPS 13.jpg": "/proyectofinal/static/media/Dell XPS 13.d19d9c69f19fb368f47d.jpg",
     "index.html": "/proyectofinal/index.html",
-    "main.247ade8b.css.map": "/proyectofinal/static/css/main.247ade8b.css.map",
-    "main.901ab220.js.map": "/proyectofinal/static/js/main.901ab220.js.map",
+    "main.b23da4ee.css.map": "/proyectofinal/static/css/main.b23da4ee.css.map",
+    "main.3a73e46c.js.map": "/proyectofinal/static/js/main.3a73e46c.js.map",
     "787.6dbdcbe9.chunk.js.map": "/proyectofinal/static/js/787.6dbdcbe9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.247ade8b.css",
-    "static/js/main.901ab220.js"
+    "static/css/main.b23da4ee.css",
+    "static/js/main.3a73e46c.js"
   ]
 }
