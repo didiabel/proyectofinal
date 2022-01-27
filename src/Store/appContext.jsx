@@ -177,13 +177,13 @@ const deleteAdmin = (id) =>{
   //si no hay productos en el wishlist
   const [noHayProductos, setNoHayProductos]=useState(false)
 
-  const comprar = (compra, navigate) =>{
+  const comprar = (compra) =>{
     setCompras([...compras, compra])
       setWishlist([])
       setPrecioTotal(0)
       toast.success("Compra Realizada")
   }
-  //values de inputs para agregar producto
+  //values de inputs para agregar producto para admin
   const [newid, setNewid] = useState("")
     const [newnombre, setNewnombre] = useState("")
     const [newtipo, setNewtipo] = useState("")

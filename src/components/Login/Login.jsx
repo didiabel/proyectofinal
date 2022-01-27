@@ -13,6 +13,7 @@ const Login = () => {
     userPassword,
     setUserPassword,
   } = useContext(TecnoContext);
+  
   const [error, setError] = useState(false);
 
   let navigate = useNavigate();
@@ -22,6 +23,7 @@ const Login = () => {
     for (let i = 0; i < users.length; i++) {
       if (userName == users[i].name && userPassword == users[i].password) {
         setUserLoged(`User: ${users[i].name}`);
+        setError(false)
         navigate("/proyectofinal/"); //ReactRuterdom useNavigate
       } else {
         setError(true);

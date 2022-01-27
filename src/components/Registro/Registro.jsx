@@ -51,19 +51,6 @@ const Registro = () => {
   return (
     <div className="container">
       <Toaster/>
-      {!userLoged === false ? (
-        <div className="d-flex justify-content-around m-5">
-          <div>
-            <h1>Ya estas Logueado</h1>
-            <Link
-              className="d-flex justify-content-around"
-              to={"/proyectofinal/"}
-            >
-              <button className="btn btn-secondary m-5">Ir al inicio</button>
-            </Link>
-          </div>
-        </div>
-      ) : (
         <div className="align-items-center   cuerpologin">
           <h1 className="text-center border- m-4 p-4">Register</h1>
           <form className="container align-items-center larger shadow formingreso mb-5 mt-3 p-3">
@@ -121,7 +108,7 @@ const Registro = () => {
             </div>
           </form>
         </div>
-      )}
+      )
     </div>
   );
 };
