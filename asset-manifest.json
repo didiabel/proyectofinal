@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/proyectofinal/static/css/main.83540056.css",
+    "main.js": "/proyectofinal/static/js/main.d410a85b.js",
+    "static/js/787.6dbdcbe9.chunk.js": "/proyectofinal/static/js/787.6dbdcbe9.chunk.js",
+    "static/media/Huawei MateBook 13.jpg": "/proyectofinal/static/media/Huawei MateBook 13.b086acb46c3365388269.jpg",
+    "static/media/Amazon Fire HD 8 (2020).jpg": "/proyectofinal/static/media/Amazon Fire HD 8 (2020).3b42e74ffc78e4b0219d.jpg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/proyectofinal/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/proyectofinal/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/proyectofinal/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/Google Pixel 4.jpg": "/proyectofinal/static/media/Google Pixel 4.42117a72c7f2cc8a3a6e.jpg",
+    "static/media/Samsung Galaxy Note 10 Plus.jpg": "/proyectofinal/static/media/Samsung Galaxy Note 10 Plus.d51b4145a5ac824e26af.jpg",
+    "static/media/iPhone 11.jpg": "/proyectofinal/static/media/iPhone 11.c335668079f0d0f7ed11.jpg",
+    "static/media/HP Spectre x360.jpg": "/proyectofinal/static/media/HP Spectre x360.15de65b7a0f47c6e5daf.jpg",
+    "static/media/bootstrap-icons.woff?": "/proyectofinal/static/media/bootstrap-icons.38c4d2499557ae0379fd.woff",
+    "static/media/OnePlus 7T.jpg": "/proyectofinal/static/media/OnePlus 7T.200df063afb2cdfce0d5.jpg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/proyectofinal/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/bootstrap-icons.woff2?": "/proyectofinal/static/media/bootstrap-icons.2b56e79ae5013246de29.woff2",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/proyectofinal/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/MacBook Pro (16-inch, 2019).jpg": "/proyectofinal/static/media/MacBook Pro (16-inch, 2019).45c7fa5bd75e96fa3b84.jpg",
+    "static/media/Lenovo Yoga Smart Tab.jpg": "/proyectofinal/static/media/Lenovo Yoga Smart Tab.18170671a2c8a3842ae0.jpg",
+    "static/media/profile.jpg": "/proyectofinal/static/media/profile.8973ad91ff3039f96c89.jpg",
+    "static/media/Samsung Galaxy S10 Plus.jpg": "/proyectofinal/static/media/Samsung Galaxy S10 Plus.f30c86f3fdc97c23147b.jpg",
+    "static/media/Tablet Xiaomi 11 Mi Pad 5 6GB 128GB gris.jpg": "/proyectofinal/static/media/Tablet Xiaomi 11 Mi Pad 5 6GB 128GB gris.5e78dfc9fb1102658e36.jpg",
+    "static/media/Lenovo Smart Tab.jpg": "/proyectofinal/static/media/Lenovo Smart Tab.14b03e23aa32979f2aca.jpg",
+    "static/media/compu2.jpg": "/proyectofinal/static/media/compu2.de631ed698dad6c03da0.jpg",
+    "static/media/Samsung Tab S6 Lite.jpg": "/proyectofinal/static/media/Samsung Tab S6 Lite.aaf5bd7f7da784dec8bc.jpg",
+    "static/media/Dell XPS 13.jpg": "/proyectofinal/static/media/Dell XPS 13.d19d9c69f19fb368f47d.jpg",
+    "index.html": "/proyectofinal/index.html",
+    "main.83540056.css.map": "/proyectofinal/static/css/main.83540056.css.map",
+    "main.d410a85b.js.map": "/proyectofinal/static/js/main.d410a85b.js.map",
+    "787.6dbdcbe9.chunk.js.map": "/proyectofinal/static/js/787.6dbdcbe9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83540056.css",
+    "static/js/main.d410a85b.js"
+  ]
+}
