@@ -12,7 +12,7 @@ const Registro = () => {
     userName,
     setUserName,
     userPassword,
-    setPassword,
+    setUserPassword,
   } = useContext(TecnoContext);
 
   const newUser = {
@@ -32,7 +32,7 @@ const Registro = () => {
     setInputs(true)
     setRegistroAprobado(false)
   };
-let navigate= useNavigate()
+
   const agregarUsuario = (e) => {
     e.preventDefault();
     setInputs(false)
@@ -45,8 +45,6 @@ let navigate= useNavigate()
         setYaExiste(false)
         setRegistroAprobado(true)
         toast.success(`Usuario Registrado: ${userName} `)
-        navigate('/proyectofinal/login')
-
       }
     
   };
@@ -91,7 +89,7 @@ let navigate= useNavigate()
                 type="password"
                 className="form-control"
                 id="exampleInputPassword1"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setUserPassword(e.target.value)}
               />
               <div id="emailHelp" className={inputs? "text-danger" :"d-none"}>
                 Datos Invalidos
