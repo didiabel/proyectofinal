@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proyectofinal/static/css/main.83540056.css",
-    "main.js": "/proyectofinal/static/js/main.27429a91.js",
+    "main.css": "/proyectofinal/static/css/main.247ade8b.css",
+    "main.js": "/proyectofinal/static/js/main.901ab220.js",
     "static/js/787.6dbdcbe9.chunk.js": "/proyectofinal/static/js/787.6dbdcbe9.chunk.js",
     "static/media/Huawei MateBook 13.jpg": "/proyectofinal/static/media/Huawei MateBook 13.b086acb46c3365388269.jpg",
     "static/media/Amazon Fire HD 8 (2020).jpg": "/proyectofinal/static/media/Amazon Fire HD 8 (2020).3b42e74ffc78e4b0219d.jpg",
@@ -23,16 +23,16 @@
     "static/media/Samsung Galaxy S10 Plus.jpg": "/proyectofinal/static/media/Samsung Galaxy S10 Plus.f30c86f3fdc97c23147b.jpg",
     "static/media/Tablet Xiaomi 11 Mi Pad 5 6GB 128GB gris.jpg": "/proyectofinal/static/media/Tablet Xiaomi 11 Mi Pad 5 6GB 128GB gris.5e78dfc9fb1102658e36.jpg",
     "static/media/Lenovo Smart Tab.jpg": "/proyectofinal/static/media/Lenovo Smart Tab.14b03e23aa32979f2aca.jpg",
-    "static/media/compu2.jpg": "/proyectofinal/static/media/compu2.de631ed698dad6c03da0.jpg",
+    "static/media/mackbook pro.jpg": "/proyectofinal/static/media/mackbook pro.de631ed698dad6c03da0.jpg",
     "static/media/Samsung Tab S6 Lite.jpg": "/proyectofinal/static/media/Samsung Tab S6 Lite.aaf5bd7f7da784dec8bc.jpg",
     "static/media/Dell XPS 13.jpg": "/proyectofinal/static/media/Dell XPS 13.d19d9c69f19fb368f47d.jpg",
     "index.html": "/proyectofinal/index.html",
-    "main.83540056.css.map": "/proyectofinal/static/css/main.83540056.css.map",
-    "main.27429a91.js.map": "/proyectofinal/static/js/main.27429a91.js.map",
+    "main.247ade8b.css.map": "/proyectofinal/static/css/main.247ade8b.css.map",
+    "main.901ab220.js.map": "/proyectofinal/static/js/main.901ab220.js.map",
     "787.6dbdcbe9.chunk.js.map": "/proyectofinal/static/js/787.6dbdcbe9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83540056.css",
-    "static/js/main.27429a91.js"
+    "static/css/main.247ade8b.css",
+    "static/js/main.901ab220.js"
   ]
 }
