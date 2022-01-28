@@ -1,5 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
+import{ init } from '@emailjs/browser';
+init("user_h8jvPXks8He4eKqaSJNEE");
 
 export const TecnoContext = createContext(null);
 
@@ -177,8 +180,32 @@ const deleteAdmin = (id) =>{
   //si no hay productos en el wishlist
   const [noHayProductos, setNoHayProductos]=useState(false)
 
-  const comprar = (compra) =>{
-    setCompras([...compras, compra])
+
+  
+  const comprar = (wish, precioTotal) =>{
+
+    const newCompra = {
+      wish, 
+      userName: userLoged, precioTotal
+    }
+  setCompras([...compras,newCompra])
+
+    var templateParams = {
+      to: userLoged,
+      from: "Tecno Green",
+      user: userLoged,
+      compra: newCompra,
+      notes: 'gracios por tu compra'
+  };
+   
+  emailjs.send('service_p7fpczf', 'template_sgn81h5', templateParams)
+      .then(function(response) {
+         console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+
+      
       setWishlist([])
       setPrecioTotal(0)
       toast.success("Compra Realizada")

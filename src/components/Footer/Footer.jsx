@@ -12,23 +12,23 @@ const Footer = () => {
     <div className="d-flex justify-content-between">
   <div>
     <input type="radio" id="1" name="rating" value="1" required="" />
-    <label className="m-2" for="1">1️</label>
+    <label className="m-2" htmlFor="1">1️</label>
   </div>
   <div>
     <input type="radio" id="2" name="rating" value="2" required="" />
-    <label className="m-2" for="2">2️</label>
+    <label className="m-2" htmlFor="2">2️</label>
   </div>
   <div>
     <input type="radio" id="3" name="rating" value="3" required="" />
-    <label className="m-2" for="3">3️</label>
+    <label className="m-2" htmlFor="3">3️</label>
   </div>
   <div>
     <input type="radio" id="4" name="rating" value="4" required="" />
-    <label className="m-2" for="4">4️</label>
+    <label className="m-2" htmlFor="4">4️</label>
   </div>
   <div>
     <input type="radio" id="5" name="rating" value="5" required="" />
-    <label className="m-2" for="5">5️</label>
+    <label className="m-2" htmlFor="5">5️</label>
   </div>
   </div>
   </div>

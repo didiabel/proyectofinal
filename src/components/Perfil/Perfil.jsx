@@ -13,6 +13,8 @@ const Perfil = () => {
     setUserName('')
     setUserPassword('')
   }
+const comprasPorUser = compras.filter(comp => comp.userName == userLoged)
+
   return (
     <div className="container mt-5">
       {userLoged === false ? (
@@ -54,10 +56,12 @@ const Perfil = () => {
                 <Link to={"/proyectofinal/admin/dashboard"}>
                   <button className="btn btn-warning m-3">Dashboard</button>
                 </Link>
+              </div>
+              <div className="d-flex justify-content-center texto m-3">
                 <Link to={"/proyectofinal/login"}>
                   <button onClick={(e)=>cerrarSesion(e)} className="btn btn-danger m-3">Cerrar Sesion</button>
                 </Link>
-              </div>
+                </div>
             </div>
 
             <div className="card-body p-3">
@@ -68,10 +72,11 @@ const Perfil = () => {
                 className="card-text d-flex flex-wrap justify-content-center p-3 texto"
                 id="compras"
               >
-                {compras.map((comp) => (
+                {comprasPorUser.map((comp) => (
                   <div key={comp.id} className="carta m-3 p-2"style={{ width: "16rem" }}>
                     <h4 className="m-1"> Detalle de Compra: </h4>
-                    {comp.map((compra) => (
+                    {comp.wish.map((compra) => (
+                      <>
                       <div
                         className="d-flex justify-content-between"
                         key={compra.nombre}
@@ -79,7 +84,9 @@ const Perfil = () => {
                         <p className="m-3 text-white">{compra.nombre}:</p>
                         <p className="m-3 ">${compra.precio}</p>
                       </div>
+                        </>
                     ))}
+                  <h3 className="m-3 ">Precio Total: ${comp.precioTotal}</h3>
                   </div>
                 ))}
               </div>
