@@ -154,7 +154,7 @@ const TecnoProvider = ({ children }) => {
   //funcion para agregar producto
   const addProduct = (product, precionuevo) =>{
     const error = wishlist.find(wish =>wish.id === product.id)
-    if (error) return toast.error('Este producto ya esta en tus Deseados')
+    if (error) return toast.error('Este producto ya esta en tu Carrito')
     setWishlist([product, ...wishlist])
     setPrecioTotal(parseInt(precioTotal) + parseInt(precionuevo) )
     toast.success('Agregado al carrito')

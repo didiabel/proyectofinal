@@ -42,6 +42,7 @@ const Login = () => {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            placeholder="Usuario"
             onChange={(e) => setUserName(e.target.value)}
           />
           <div id="emailHelp" className="form-text">
@@ -56,6 +57,7 @@ const Login = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
+            placeholder="Contraseña"
             onChange={(e) => setUserPassword(e.target.value)}
           />
         </div>
